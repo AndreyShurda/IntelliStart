@@ -1,4 +1,4 @@
-package com.intellias.lesson5.oop;
+package com.intellias.lesson6.oop;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

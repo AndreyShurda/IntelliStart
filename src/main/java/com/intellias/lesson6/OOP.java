@@ -1,8 +1,8 @@
-package com.intellias.lesson5;
+package com.intellias.lesson6;
 
-import com.intellias.lesson5.oop.Animal;
-import com.intellias.lesson5.oop.Food;
-import com.intellias.lesson5.oop.Mammal;
+import com.intellias.lesson6.oop.Animal;
+import com.intellias.lesson6.oop.Food;
+import com.intellias.lesson6.oop.Mammal;
 
 public class OOP {
     public static void main(String[] args) {

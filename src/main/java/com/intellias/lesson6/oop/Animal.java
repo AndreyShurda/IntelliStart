@@ -1,4 +1,4 @@
-package com.intellias.lesson5.oop;
+package com.intellias.lesson6.oop;
 
 public class Animal implements Eater, Walker{
     public static final int CURRENT_YEAR = 2022;

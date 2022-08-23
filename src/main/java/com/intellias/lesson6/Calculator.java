@@ -1,4 +1,4 @@
-package com.intellias.lesson5;
+package com.intellias.lesson6;
 
 public class Calculator {
 
