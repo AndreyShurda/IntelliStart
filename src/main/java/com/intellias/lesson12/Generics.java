@@ -1,7 +1,8 @@
 package com.intellias.lesson12;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
+import java.util.*;
+import java.util.function.Predicate;
 
 public class Generics {
     public static void main(String[] args) {
@@ -26,8 +27,14 @@ public class Generics {
         System.out.println("sum of elements: ");
         System.out.println(sum(integers));
 
-        print(integers);
+        List<Number> list1 = Arrays.asList(1, 2, 25);
+        print(list1);
+        List<Serializable> list = Arrays.asList(1.0, "2.0", 25);
+        print(list);
+        List<Object> list2 = Collections.singletonList(integers);
+        print(list2);
 
+        integers.stream().filter(Objects::isNull).count();
     }
 
 //    static double sum(double a, double b) {
@@ -74,10 +81,11 @@ public class Generics {
         return sum;
     }
 
-    static double print(List<? super Integer> list) {
+    static double print(List<? super Number> list) {
         double sum = 0;
+        System.out.println("print elements");
         for (Object o : list) {
-            System.out.println(o);
+            System.out.println(o.getClass());
         }
         return sum;
     }

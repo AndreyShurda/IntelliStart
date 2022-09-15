@@ -1,5 +1,8 @@
 package com.intellias.lesson12;
 
+import com.intellias.lesson16.CompanyEmployee;
+import com.intellias.utils.Utils;
+
 import java.util.*;
 
 public class CompareObjects {
@@ -26,6 +29,7 @@ public class CompareObjects {
         empArr[2] = new Employee(5, "Lisa", 35, 5000);
         empArr[3] = new Employee(1, "Pankaj", 32, 50000);
         empArr[4] = new Employee(22, "Arun", 23, 20000);
+        empArr[5] = new CompanyEmployee(22, "Ivan", 55, 4550, "Intellias");
 
 
         Comparator<Employee> salaryComparator = new Comparator<Employee>() {
@@ -51,32 +55,27 @@ public class CompareObjects {
         };
 
         System.out.println("employees before sort");
-        printArray(empArr);
+        Utils.printCollection(empArr);
         Arrays.sort(empArr);
 
         System.out.println("=====================================");
         System.out.println("employees after sort");
-        printArray(empArr);
+        Utils.printCollection(empArr);
 
         System.out.println("=====================================");
         Arrays.sort(empArr, salaryComparator);
         System.out.println("employees after sort via salaryComparator");
-        printArray(empArr);
+        Utils.printCollection(empArr);
 
         System.out.println("=====================================");
         Arrays.sort(empArr, (o1, o2) -> o1.getAge() - o2.getAge());
         System.out.println("employees after sort via ageComparator");
-        printArray(empArr);
+        Utils.printCollection(empArr);
 
         System.out.println("=====================================");
         Arrays.sort(empArr, salaryAndAgeComparator);
         System.out.println("employees after sort via salaryAndAgeComparator");
-        printArray(empArr);
+        Utils.printCollection(empArr);
     }
 
-    static <T> void printArray(T[] array) {
-        for (T t : array) {
-            System.out.println(t);
-        }
-    }
 }

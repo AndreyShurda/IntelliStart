@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @Getter
 @Setter
-@ToString
+//@ToString
 public class Employee implements Comparable<Employee>{
     private int id;
     private String name;
@@ -23,5 +23,34 @@ public class Employee implements Comparable<Employee>{
     @Override
     public int compareTo(Employee e) {
         return this.id - e.id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Employee employee = (Employee) o;
+
+        if (age != employee.age) return false;
+        return name.equals(employee.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + age;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", salary=" + salary +
+                ", hashCode=" + hashCode() +
+                '}';
     }
 }
